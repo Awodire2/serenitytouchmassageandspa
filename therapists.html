@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="password-container">
+        <h2>Enter Password to View Therapists</h2>
+        <input type="password" id="password-input" placeholder="Enter password" required>
+        <button onclick="checkPassword()">Enter</button>
+        <h3>Request for a password via the contact page to view therapists</h3>
+    </div>
+
+    <div id="protected-content" style="display: none;">
+        <h1>Pictures of our therapis....</h1>
+        <div class="img">
+            <h3>#1. Joy { Acting C.E.O & Massage Therapist / Aesthetician }</h3><img src="joy.jpg" alt="#1"
+                class="image">
+            <img src="joy1.jpg" alt="#1" class="image">
+            <h3>#2. Lina { Massage Therapist }</h3> <img src="lina.jpg" alt="#2" class="image">
+            <img src="lina1.jpg" alt="#2" class="image">
+            <h3>#3. Mercy { Massage Therapist }</h3> <img src="mercy.jpg" alt="#3" class="image">
+            <img src="mercy1.jpg" alt="#3" class="image">
+            <h3>#4. Jasmine { Massage Therapist }</h3> <img src="jasmine.jpg" alt="#4" class="image">
+            <img src="jasmine1.jpg" alt="#4" class="image">
+            <h3>#5. Ella { Masseuse }</h3> <img src="ella.jpg" alt="#5" class="image">
+            <h3>#6. Stephanie { Masseuse }</h3><img src="stephanie.jpg" alt="#6" class="image">
+            <h3>#7. Christabel { Masseuse }</h3><img src="christabel.jpg" alt="#7" class="image">
+            <h3>#8. Alex { Masseur }</h3> <img src="alex.jpg" alt="#8" class="image">
+            <img src="alex1.jpg" alt="#8" class="image">
+
+
+        </div>
+        <div class="container">
+            <div id="modelBox">
+                <img src="discountsales.jpg" width="100%">
+                <div class="offer-text">
+                    <h2>🎄 Ember Promo at Serenity Touch Massage and Spa! 🎄</h2>
+                    <small>
+                        Get Up to 30% Discount on All Services!
+
+                        This Christmas season, treat yourself or a loved one to a rejuvenating experience at Serenity
+                        Touch Massage and Spa. From December 5, 2024, to January 15, 2025, enjoy up to 30% off on all
+                        our services. Whether you’re looking for a relaxing massage, invigorating facial, or a full spa
+                        day, we have something for everyone.
+
+                        Don’t miss out on this limited-time offer! Book your appointment today and embrace the holiday
+                        spirit with Serenity Touch.
+                    </small>
+                    <form>
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <img src="close.png" class="close-icon" onclick="closeModel()">
+            </div>
+        </div>
+        <script>
+            // Password Check Functionality
+            function checkPassword() {
+                const passwordInput = document.getElementById('password-input');
+                const enteredPassword = passwordInput.value;
+                const correctPassword = 'seren'; // Replace with your actual password
+                const minLength = 5;
+                const maxLength = 7;
+
+                if (enteredPassword.length < minLength || enteredPassword.length > maxLength) {
+                    alert(`Password must be between ${minLength} and ${maxLength} characters.`);
+                    return;
+                }
+
+                if (enteredPassword === correctPassword) {
+                    document.getElementById('password-container').style.display = 'none';
+                    document.getElementById('protected-content').style.display = 'block';
+                } else {
+                    alert('Incorrect password. Please try again.');
+                }
+            }
+
+            // Show and Hide Message Popup
+            function showMessage(message) {
+                document.getElementById('popup-text').innerText = message;
+                document.getElementById('message-popup').style.display = 'block';
+            }
+
+            function hideMessage() {
+                document.getElementById('message-popup').style.display = 'none';
+            }
+
+            // Debounce Mechanism for Exit Intent Ad Modal
+            let debounceTimeout; // Variable to hold the timeout ID
+
+            document.onmouseleave = function () {
+                if (!debounceTimeout) {
+                    debounceTimeout = setTimeout(() => {
+                        showModel();
+                        debounceTimeout = null; // Reset the timeout after execution
+                    }, 2000); // Adjust the debounce delay as needed (2000ms = 2 seconds)
+                }
+            };
+
+            function showModel() {
+                let modelBox = document.getElementById("modelBox");
+                modelBox.style.display = "block";
+            }
+
+            function closeModel() {
+                let modelBox = document.getElementById("modelBox");
+                modelBox.style.display = "none";
+                clearTimeout(debounceTimeout); // Clear the timeout to prevent future triggers
+                debounceTimeout = null; // Reset debounceTimeout
+            }
+
+            function showMessage(message) {
+                document.getElementById('popup-text').innerText = message;
+                document.getElementById('message-popup').style.display = 'block';
+            }
+
+            function hideMessage() {
+                document.getElementById('message-popup').style.display = 'none';
+            }
+
+            // Password Check Functionality
+            function checkPassword() {
+                const passwordInput = document.getElementById('password-input');
+                const enteredPassword = passwordInput.value;
+                const correctPassword = 'seren'; // Replace with your actual password
+                const minLength = 5;
+                const maxLength = 7;
+
+                if (enteredPassword.length < minLength || enteredPassword.length > maxLength) {
+                    alert(`Password must be between ${minLength} and ${maxLength} characters.`);
+                    return;
+                }
+
+
+                if (enteredPassword === correctPassword) {
+                    document.getElementById('password-container').style.display = 'none';
+                    document.getElementById('protected-content').style.display = 'block';
+
+                } else {
+                    alert('Incorrect password. Please try again.');
+                }
+
+            }
+
+            // Show and Hide Message Popup
+            function showMessage(message) {
+                document.getElementById('popup-text').innerText = message;
+                document.getElementById('message-popup').style.display = 'block';
+            }
+
+            function hideMessage() {
+                document.getElementById('message-popup').style.display = 'none';
+            }
+
+
+        </script>
+</body>
+
+
+</html>
