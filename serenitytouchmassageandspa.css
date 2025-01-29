@@ -152,7 +152,14 @@ footer {
         height: 50px;
         border-radius: 50%;
         background-color: pink;
+        align-items: left;
     }
+
+    .heading {
+        text-align: left;
+        display: flex;
+        align-items: left;
+        justify-content: left;
 
 
     footer {
