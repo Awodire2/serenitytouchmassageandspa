@@ -156,10 +156,7 @@ footer {
     }
 
     .heading {
-        text-align: left;
-        display: flex;
         align-items: left;
-        justify-content: left;
 
 
     footer {
