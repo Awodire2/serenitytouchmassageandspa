@@ -134,13 +134,13 @@ footer {
         background-color: transparent;
         font-family: 'Times New Roman', Times, serif;
         margin: 0;
-        display: block;
+        display: ;
     }
 
     .serenity {
         color: brown;
-        font-size: x-large;
-        font-weight: 600;
+        font-size: large;
+        font-weight: 500;
     }
 
     /*header .logo {
@@ -160,7 +160,7 @@ footer {
         color: black;
         width: 100%;
         bottom: 0;
-        position: absolute;
+        position: fixed;
         margin: 0;
     }
 
